@@ -9,6 +9,14 @@ int main(){
         cout<<"enter"<<endl;
         cin>>num[i];
     }
+    cout<<num;
+    cout<<endl;
+
+    for(int j=0;j<size;j++){
+        cout<<num[j]<<" ";
+    }
+
+    cout<<endl;
 
     // to initialize entire array with a number 
     int sam[10];
