@@ -1,0 +1,8 @@
+logic
+take variable =INT_MIN
+if(element of array > variable)
+substitute the value
+and go so pn 
+then return the ans
+
+same logic for minimum but take INT_MAX
