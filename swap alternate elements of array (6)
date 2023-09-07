@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+void input(int arr[],int size){
+    for(int k=0;k<size;k++){
+        cin>>arr[k];
+    }
+}
+void print(int arr[],int size){
+    for(int k=0;k<size;k++){
+        cout<<arr[k]<<" ";
+    }
+}
+void reverse(int arr[],int size){
+    int i=0;
+    int j=1;
+    int a=arr[i];
+    int b=arr[j];
+    while(i<size && j<size){
+        swap(arr[i],arr[j]);
+        i+=2;
+        j+=2;
+    }
+    print(arr,size);
+}
+int main(){
+    int num[100];
+    int size;
+    cout<<"size=";
+    cin>>size;
+    cout<<"enter the elements"<<endl;
+    input(num,size);
+    reverse(num,size);
+}
