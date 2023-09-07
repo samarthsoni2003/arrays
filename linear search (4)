@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+bool present(int array[], int size, int element) {
+  bool search = 0;
+  for (int i = 0; i < size; i++) {
+    if (array[i] == element) {
+      search = 1;
+      break;
+    }
+  }
+  return search;
+}
+int main() {
+  int num[100];
+  int size;
+  cout << "size of array" << endl;
+  cin >> size;
+  int n;
+  cout << "element to be searched" << endl;
+  cin >> n;
+  for (int i = 0; i < size; i++) {
+    cout << "enter the element ";
+    cin >> num[i];
+  }
+  bool a = present(num, size, n);
+  if (a == 1) {
+    cout << "present";
+  } else {
+    cout << "not preent";
+  }
+}
