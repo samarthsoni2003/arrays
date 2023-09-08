@@ -1,4 +1,6 @@
-  logic 1=comparion approach
+https://www.codingninjas.com/studio/problems/duplicate-in-array_893397?source=youtube&campaign=love_babbar_codestudio1
+
+logic 1=comparion approach
    int i=0;
    int j=i+1;
    int N=arr.size();
