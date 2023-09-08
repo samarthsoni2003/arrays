@@ -1,0 +1,31 @@
+  logic 1=comparion approach
+   int i=0;
+   int j=i+1;
+   int N=arr.size();
+   while(i<N){
+       j=i+1;
+       while(j<N){
+           if(arr[i]==arr[j]){
+               return arr[i];
+           }
+        else{
+            j++;
+        }
+       }
+       i++;
+   }
+
+   logic 2= sum approach
+   int findDuplicate(vector<int> &arr) 
+{   
+ int N=arr.size();
+ int sum=0;
+ int b=(N*(N-1))/2;
+ for(int i=0;i<N;i++){
+     sum=sum+arr[i];
+ }
+ int c=sum-b;
+ return c;
+}
+
+logic 3=xor logic
