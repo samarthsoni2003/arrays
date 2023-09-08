@@ -1,3 +1,5 @@
+https://www.codingninjas.com/studio/problems/find-unique_625159?source=youtube&campaign=love_babbar_codestudio1
+
 int findUnique(int *arr, int size)
 {
     int i=0;
