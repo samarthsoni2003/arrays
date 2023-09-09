@@ -1,0 +1,67 @@
+https://www.codingninjas.com/studio/problems/intersection-of-2-arrays_1082149?source=youtube&campaign=love_babbar_codestudio1&leftPanelTab=1
+
+logic 1= basic comparison approach but gives TLE
+vector<int> num;
+	int i=0;
+	int indexstore=0;
+	bool equal=0;
+	int j=0;
+	bool ans=0;
+	while(i<n){
+		if(j>=m){
+			break;
+		}
+		while(j<m){
+			if(arr1[i]==arr2[j]){
+				num.push_back(arr2[j]);
+				equal=1;
+				indexstore=j;
+				ans=1;
+				break;
+			}
+			else{
+				j++;
+			}
+		}
+		if (ans==1) {
+			ans=0;
+			j++;
+			i++;
+			}
+			else{
+				if(equal==1){
+					j=indexstore+1;
+					i++;
+				}
+				else{
+					j=0;
+					i++;
+				}
+				}
+        }
+        return num;  */
+
+
+logic 2 optimization approach 
+#include <bits/stdc++.h> 
+#include<vector>
+vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
+{
+	int i=0;
+	vector<int> num;
+	int j=0;
+        while(i<n && j<m){
+				if(arr1[i]<arr2[j]){
+					i++;
+				}
+				else if(arr1[i]==arr2[j]){
+					num.push_back(arr1[i]);
+					i++;
+					j++;
+					}
+					else{
+						j++;
+						}
+                 }
+        return num;
+}
