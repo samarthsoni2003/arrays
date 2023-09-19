@@ -1,0 +1,42 @@
+https://practice.geeksforgeeks.org/problems/equilibrium-point-1587115620/1?page=1&difficulty[]=0&category[]=Arrays&sortBy=submissions
+
+logic 1 
+        if(n==1){
+            return a[0];
+        }
+        bool ans=0;
+        int k=n-1;
+        int j=1;
+        while(j<k){
+            int suml=0;
+            int sumr=0;
+            for(int i=0;i<j;i++){
+                suml+=a[i];
+            }
+            for(int k=n-1;k>j;k--){
+                sumr+=a[k];
+        }
+            if(suml==sumr){
+                return j+1;
+        }
+        j++;
+        }
+        return {-1};
+
+logic 2
+        int sum=0;
+        for(int i=0;i<n;i++){
+            sum+=a[i];
+        }
+        bool found=0;
+        int suml=0;
+        for(int i=0;i<n;i++){
+            if(suml==sum-a[i]){
+                return i+1;
+            }
+            suml+=a[i];
+            sum-=a[i];
+        }
+        if(found==0){
+            return {-1};
+        } 
