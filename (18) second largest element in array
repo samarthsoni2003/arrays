@@ -1,0 +1,18 @@
+https://practice.geeksforgeeks.org/problems/second-largest3735/1?page=1&difficulty[]=0&category[]=Arrays&sortBy=submissions
+
+ int max=arr[0];
+	    int a=INT_MIN;
+	    for(int j=1;j<n;j++){
+	        if(arr[j]>max){
+	            a=max;
+	            max=arr[j];
+	        }
+	        else if(arr[j]>a && arr[j]!=max){
+	            a=arr[j];
+	        }
+	        }
+	        if(a==INT_MIN){
+	            return {-1};
+	        }
+	      return a;
+	    }
