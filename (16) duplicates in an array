@@ -1,0 +1,67 @@
+https://practice.geeksforgeeks.org/problems/find-duplicates-in-an-array/1?page=1&difficulty[]=0&category[]=Arrays&sortBy=submissions
+         
+logic 1
+        vector<int> index(n,0);
+        int i=0;
+        int j=n-1;
+        while(i<j){
+            if(arr[i]==arr[j]){
+                int a=arr[i];
+                index[a]=1;
+                i++;
+                j=n-1;
+            }
+            else{
+                j--;
+                if(i==j){
+                    i++;
+                    j=n-1;
+                }
+            }
+        }
+        vector<int> ans;
+        for(int k=0;k<n;k++){
+            if(index[k]==1){
+                ans.push_back(k);
+            }
+        }
+        if(ans.size()==0){
+        return {-1};
+        }
+        else{
+            return ans;
+        }
+
+logic 2 
+        vector<int> visited(n,0);
+        vector<int> ans;
+        
+        for(int i=0; i<n; i++){
+            visited[arr[i]]++;
+        }
+       
+        for(int i=0; i<n; i++){
+            if(visited[i]>1){
+                ans.push_back(i);
+            }
+        }
+        if(ans.empty()==true){
+            return {-1};
+        }
+    return ans;    
+
+logic 3
+vector<int> ans;
+        for(int i=0;i<n;i++){
+            int index=arr[i]%n;
+            arr[index]+=n;
+        }
+        for(int j=0;j<n;j++){
+            if(arr[j]/n>1){
+                ans.push_back(j);
+            }
+        }
+        if(ans.size()==0){
+            return {-1};
+        }
+        return ans;
