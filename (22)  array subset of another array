@@ -1,0 +1,33 @@
+https://practice.geeksforgeeks.org/problems/array-subset-of-another-array2317/1?page=1&difficulty[]=0&category[]=Arrays&sortBy=submissions
+
+{
+    int i=0;
+    if(m>n){
+        return "No";
+    }
+    bool ans=0;
+    bool equal=1;
+    int j=0;
+    sort(a1,a1+n);
+    sort(a2,a2+m);
+    while(i<n && j<m){
+        if(a1[i]==a2[j]){
+            equal=1;
+            ans=1;
+            i++;
+            j++;
+        }
+        else if(a1[i]>a2[j]){
+            equal=0;
+            ans=0;
+            break;
+        }
+        else{
+            i++;
+        }
+    }
+    if(ans==0){
+        return "No";
+    }
+    return "Yes";
+}
