@@ -23,3 +23,5 @@ https://practice.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1?pag
         }
         return pair;
     }
+
+for another solution unordered map can be used 
