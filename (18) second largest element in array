@@ -16,3 +16,19 @@ https://practice.geeksforgeeks.org/problems/second-largest3735/1?page=1&difficul
 	        }
 	      return a;
 	    }
+
+logic 2
+ sort(arr,arr+n);
+	      int i=n-1;
+	      bool found=0;
+	      for(i=n-1;i>0;i--){
+	          if(arr[i]!=arr[i-1]){
+	              found=1;
+	              break;
+	          }
+	      }
+	      if(found){
+	      return arr[i-1];
+	      }
+	      return {-1};
+	    
