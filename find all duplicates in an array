@@ -1,0 +1,18 @@
+https://leetcode.com/problems/find-all-duplicates-in-an-array/description/
+
+vector<int> findDuplicates(vector<int>& nums) {
+        if(nums.size()==1){
+            return {};
+        }
+        sort(nums.begin(),nums.end());
+        vector<int> ans;
+        for(int j=1;j<nums.size();j++){
+            if(nums[j]==nums[j-1]){
+                ans.push_back(nums[j]);
+            }
+        }
+        return ans;
+    }
+
+    hashmaps can be used for alternate
+    
