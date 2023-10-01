@@ -41,4 +41,36 @@ vector<vector<int>> findTriplets(vector<int>arr, int n, int k) {
         }
     }
     return ans;
+}     this is working 
+
+    // stl used  set is used here 
+    // takes more time than second aaproach 
+    set<vector<int>> s;
+    vector<vector<int>> ans;
+    sort(arr.begin(), arr.end());
+    for (int i = 0; i < n - 2; i++) {
+        int l = i + 1;
+        int r = n - 1;
+        while (l < r) {
+            int sum = arr[i] + arr[l] + arr[r];
+            if (sum == k) {
+                vector<int> v = {arr[i], arr[l], arr[r]};
+                s.insert(v);
+                l++;
+                r--;
+      }
+      else if (sum < k) {
+          l++;
+          }
+          else {
+        r--;
+      }
+    }
+  }
+  for (auto x : s) {
+    ans.push_back(x);
+  }
+  return ans;
 }
+
+
