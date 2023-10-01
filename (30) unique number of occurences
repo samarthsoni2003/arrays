@@ -1,0 +1,64 @@
+https://leetcode.com/problems/unique-number-of-occurrences/solutions/2099062/c-using-only-arrays-100-faster-solution/
+
+
+bool uniqueOccurrences(vector<int>& arr) {
+        sort(arr.begin(),arr.end());
+        if(arr.size()==1){
+            return true;
+        }
+        vector<int> ans;
+        int count=1;
+        int index=0;
+        for(int i=arr.size()-1;i>0;i--){
+            if(arr[i]==arr[i-1]){
+                count++;
+            }
+            else{
+                ans.push_back(count);
+                index++;
+                count=1;
+            }
+        }
+
+        if(arr[0]!=arr[1]){
+            ans.push_back(1);
+        }
+        else{
+            ans.push_back(count);
+        }
+        sort(ans.begin(),ans.end());
+        for(int j=ans.size()-1;j>0;j--){
+            if(ans[j]==ans[j-1]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+logic 2 
+  vector<int> ans;
+        int size = arr.size();
+        int i = 0;
+        sort(arr.begin(),arr.end());
+        while(i<size){
+            int count = 1;
+            for(int j =i+1;j<size;j++){
+                if(arr[i]==arr[j]){
+                    count++;
+                }
+                else{
+                    break;
+                }
+            }
+            ans.push_back(count);
+            i = i+count;
+        }
+        size = ans.size();
+        sort(ans.begin(),ans.end());
+        for(int i = 0;i<size-1;i++){
+            if(ans[i]==ans[i+1]){
+                return false;
+            }
+        }
+        return true;   
+    }
