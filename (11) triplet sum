@@ -42,8 +42,10 @@ vector<vector<int>> findTriplets(vector<int>arr, int n, int k) {
     }
     return ans;
 }     this is working 
+    
 
-    // stl used  set is used here 
+logic 2
+// stl used  set is used here 
     // takes more time than second aaproach 
     set<vector<int>> s;
     vector<vector<int>> ans;
