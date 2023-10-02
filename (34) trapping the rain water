@@ -1,0 +1,38 @@
+https://practice.geeksforgeeks.org/problems/trapping-rain-water-1587115621/1?page=1&difficulty[]=1&category[]=Arrays&sortBy=submissions
+
+    long long trappingWater(int arr[], int n){
+        long count =0;
+       int mi=0;  //  this is to find index which has maximum value in array.
+       for(int i =1;i<n;i++){
+           
+           if(arr[i]>arr[mi]){
+               mi=i;
+           }
+       }
+       
+       int mhl =0;   // initilly taking maximum height left =0
+       int mhr=0;  // initilly taking maximum height right =0
+       
+       
+       // now breaking the array in two part left ---> maximum index and maximum index <--- right.
+    for(int i=0;i<mi;i++){
+        
+        if(arr[i]>mhl){    // here comparing if the current is higher than max height if yes then assigning it to mhl
+            mhl =arr[i];
+        }
+        else{
+            count+= mhl-arr[i]; // else adding maximum height left - current height
+        }
+    }
+    
+    for(int i=n-1;i>mi;i--){
+        
+        if(arr[i]>mhr){
+            mhr = arr[i];
+        }
+        else{
+            count+= mhr-arr[i];
+        }
+    }
+    return count;
+   } 
