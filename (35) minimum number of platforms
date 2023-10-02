@@ -1,0 +1,39 @@
+https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1?page=1&difficulty[]=1&category[]=Arrays&sortBy=submissions
+
+  int findPlatform(int arr[], int dep[], int n)
+    {
+    	int k=0;
+    	int l=0;
+    	int plat=1;
+    	sort(arr,arr+n);
+    	sort(dep,dep+n);
+    	vector<int> arrival(n,-1);
+    	arrival[0]=arr[k];
+    	k++;
+    	vector<int> departure(n,-1);
+    	departure[0]=dep[l];
+    	l++;
+    	int i=0;
+    	while(k<n && l<n){
+    	    i=plat-1;
+    	    while(i>=0){
+    	        if(arrival[i]<=arr[k] && arr[k]<=departure[i]){
+    	            if(i==0){
+    	                plat++;
+    	                arrival[plat-1]=arr[k];
+    	                departure[plat-1]=dep[l];
+    	                break; 
+    	            }
+    	        }
+    	        else{
+    	            arrival[i]=arr[k];
+    	            departure[i]=dep[l];
+    	            break;
+    	        }
+    	        i--;
+    	    }
+    	    k++;
+    	    l++;
+    	}
+    	return plat;
+    }
