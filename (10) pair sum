@@ -17,3 +17,5 @@ vector<vector<int>> pairSum(vector<int> &arr, int s){
    sort(num.begin(),num.end());
    return num;
 }
+
+better solution using maps 
