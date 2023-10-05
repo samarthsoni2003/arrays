@@ -18,3 +18,40 @@ https://practice.geeksforgeeks.org/problems/key-pair5616/1?page=1&difficulty[]=0
 	    }
 	    return 0;
 	}
+
+logic 2 
+ int i;
+	 vector<int> rem(x,0);
+    for (i = 0; i < n; i++){
+        if (arr[i] < x){
+            rem[arr[i] % x]++;
+        }
+    }
+    for (i = 1; i < x / 2; i++) {
+        if (rem[i] > 0 && rem[x - i] > 0) {
+            return 1;
+        }
+    }
+     if(i >= x / 2) {
+        if (x % 2 == 0) {
+            if (rem[x/2] > 1){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }
+        else {
+            if (rem[x / 2] > 0 && rem[x - x / 2] > 0){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }
+    }
+	}
+
+
+logic 3
+can be solved in linear time using hashing
