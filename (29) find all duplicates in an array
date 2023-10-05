@@ -14,5 +14,24 @@ vector<int> findDuplicates(vector<int>& nums) {
         return ans;
     }
 
+time complexity is greater than required so logic 2 
+this question is similar to question number (16) the only differenceis that in this 
+question range is from (1 to n ) and in that question range is from (0 to n) so 
+logic 3 of that question cannot be apploed here 
+
+logic 2
+ vector<int> visitedlist(nums.size()+1,0);
+        vector<int> ans;
+        for(int i=0;i<nums.size();i++){
+            visitedlist[nums[i]]++;
+        }
+        for(int i=0;i<visitedlist.size();i++){
+            if(visitedlist[i]>1){
+                ans.push_back(i);
+            }
+        }
+        return ans;
+    }
+
     hashmaps can be used for alternate
     
