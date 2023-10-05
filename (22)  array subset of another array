@@ -31,3 +31,6 @@ https://practice.geeksforgeeks.org/problems/array-subset-of-another-array2317/1?
     }
     return "Yes";
 }
+
+to get answer in linear time we use map we create a frequency table 
+this will handle the duplicate cases as well 
