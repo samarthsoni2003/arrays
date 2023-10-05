@@ -21,7 +21,7 @@ logic 1
         }
         j++;
         }
-        return {-1};
+        return {-1};            solution correct but TLE
 
 logic 2
         int sum=0;
