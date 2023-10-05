@@ -29,8 +29,8 @@ https://practice.geeksforgeeks.org/problems/array-subset-of-another-array2317/1?
     if(ans==0){
         return "No";
     }
-    return "Yes";
-}
+    return "Yes";        tc=mlog(m) + nlog(n)
+}                  my sol is correct and all test cases passed but time complexity is more 
 
 to get answer in linear time we use map we create a frequency table 
 this will handle the duplicate cases as well 
