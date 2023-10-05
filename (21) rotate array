@@ -16,3 +16,5 @@ vector<int> a(d);
             j++;
         }
     }
+
+alternate approach in notes
