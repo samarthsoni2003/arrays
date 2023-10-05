@@ -26,3 +26,26 @@ https://practice.geeksforgeeks.org/problems/product-array-puzzle4525/1?page=1&di
        }
        return ans;
     }
+
+logic 2
+vector<long long int> ans(n);
+    if (n == 1) {
+        
+        return {1};
+    }
+    long long int temp=1;
+    vector<long long int> prod(n,1);
+    for (int i = 0; i < n; i++) {
+        prod[i] = temp;
+        temp *= nums[i];
+    }
+    temp = 1;
+    for (int i = n - 1; i >= 0; i--) {
+        prod[i] *= temp;
+        temp *= nums[i];
+    }
+    for (int i=0; i<n; i++){
+        ans[i]=prod[i];
+    }
+     return ans;  
+    }
