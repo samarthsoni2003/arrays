@@ -39,3 +39,22 @@ only negative elements moved to new vector
             arr[p]=ans[i];
             p++;
         }
+
+logic 3 and most optimal    this code is for moving all the zeros to end of the array
+  int j=-1;
+    for(int i=0;i<n;i++){
+        if(a[i]==0){
+            j=i;
+            break;
+        }
+    }
+    if(j==-1){
+        return a;
+    }
+    for(int i=j+1;i<n;i++){
+        if(a[i]>0){
+            swap(a[j],a[i]);
+            j++;
+        }
+    }
+    return a;
